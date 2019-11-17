@@ -1,0 +1,31 @@
+body {
+    overflow: hidden;
+}
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+
+.lightbox .content {
+    margin: 15vh auto;
+    width: 80%;
+    max-width: 650px;
+    padding: 30px;
+    min-height: 200vh;
+    background: rgba(255, 255, 255, .95);
+}
+
+.lightbox .lightbox-header {
+    position: relative;
+}
+
+.lightbox .lightbox-close-btn {
+    position: absolute;
+    right: 20px;
+}
