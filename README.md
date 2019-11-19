@@ -8,11 +8,24 @@ yarn add hf-lightbox
 <ScrollableLightbox>
 ```
 
+## 特性
+
+支援 RWD, 手機平板<br />
+支援動畫，web 由上到下，手機右進右出。<br />
+
 ## 屬性
 
 show : 顯示/關閉 lightbox<br />
 close : close btn 事件的 callback<br />
 title : lightbox 的 title<br />
+
+## CSS
+
+.lightbox-close-btn : 可以更換 close btn 的圖形。<br />
+.lightbox-header .lightbox-title : 可以設定標題的樣式。<br />
+.lightbox-content : 可以設定內容的樣式。<br />
+.lightbox-visible : 可以是設定 lightbox 顯示的動畫。<br />
+.lightbox-hidden : 可以是設定 lightbox 消失的動畫。<br />
 
 ## demo
 
