@@ -7,13 +7,10 @@ export default class ScrollableLightbox extends Component {
       (show && (
         <div className="lightbox">
           <div className="content">
+            <button className="lightbox-close-btn" onClick={close}></button>
             <div className="lightbox-header">
-              {title}
-              <button className="lightbox-close-btn" onClick={close}>
-                關閉
-              </button>
+              <div className="lightbox-title">{title}</div>
             </div>
-            <hr></hr>
             <div className="lightbox-body">{this.props.children}</div>
           </div>
         </div>
