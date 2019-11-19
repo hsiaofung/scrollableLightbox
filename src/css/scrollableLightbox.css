@@ -82,7 +82,7 @@ body {
 }
 /*-----RWD-----*/
 /*平板*/
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .lightbox-content {
     max-width: 600px;
   }
