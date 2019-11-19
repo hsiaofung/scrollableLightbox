@@ -13,17 +13,27 @@ body {
   transition: all 300ms ease-out;
 }
 
-.lightbox .content {
+.lightbox-close {
+  opacity: 0;
+  visibility: hidden; /*讓下一層的畫面可以被點擊*/
+}
+.content {
   position: relative;
   margin: 15vh auto;
   max-width: 980px;
   padding: 35px;
   min-height: 200vh;
   background: white;
-  animation: drop 600ms;
+}
+.down {
+  animation: down 600ms;
   animation-timing-function: ease-out;
 }
-@keyframes drop {
+.up {
+  animation: up 600ms;
+  animation-timing-function: ease-out;
+}
+@keyframes down {
   from {
     top: -100px;
   }
@@ -31,15 +41,23 @@ body {
     top: 0px;
   }
 }
+@keyframes up {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -100px;
+  }
+}
 /*reset default border style*/
-.lightbox .lightbox-close-btn {
+.lightbox-close-btn {
   border: none; /*reset default border*/
 }
-.lightbox .lightbox-close-btn:focus {
+.lightbox-close-btn:focus {
   outline: none; /*reset default border*/
 }
 
-.lightbox .lightbox-close-btn {
+.lightbox-close-btn {
   width: 28px;
   height: 28px;
   position: absolute;
@@ -50,11 +68,11 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
-.lightbox .lightbox-close-btn:hover {
+.lightbox-close-btn:hover {
   opacity: 0.6;
 }
 
-.lightbox .lightbox-header .lightbox-title {
+.lightbox-header .lightbox-title {
   text-align: center;
   font-size: 2rem;
   font-weight: normal;
