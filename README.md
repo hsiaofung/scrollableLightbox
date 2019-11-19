@@ -10,8 +10,8 @@ yarn add hf-lightbox
 
 ## 特性
 
-支援 RWD, 手機平板<br />
-支援動畫，web 由上到下，手機右進右出。<br />
+支援 RWD: 手機，平板<br />
+支援動畫，web 版由上到下，手機版右進右出。<br />
 
 ## 屬性
 
@@ -30,6 +30,11 @@ title : lightbox 的 title<br />
 ## demo
 
 ```javascript
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ScrollableLightbox from "./ScrollableLightbox";
+
 class App extends React.Component {
   state = { show: false };
   click() {
