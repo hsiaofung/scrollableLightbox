@@ -1,6 +1,6 @@
 {
   "name": "hf-lightbox",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "peerDependencies": {
     "react": "^16.12.0",
@@ -24,8 +24,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "transpile": "babel src/ScrollableLightbox.jsx --out-file dist/index.js",
-    "copy": "babel src/css --out-dir dist/css --copy-files",
-    "prepublishOnly": "npm run transpile & npm run copy"
+    "copy-css": "babel src/css --out-dir dist/css --copy-files",
+    "copy-img": "babel src/img --out-dir dist/img --copy-files",
+    "prepublishOnly": "npm run transpile & npm run copy-css"
   },
   "eslintConfig": {
     "extends": "react-app"

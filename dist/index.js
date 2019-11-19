@@ -37,30 +37,31 @@ var ScrollableLightbox = function (_Component) {
           close = _props.close,
           title = _props.title;
 
-      return show && _react2.default.createElement(
+      return _react2.default.createElement(
         "div",
-        { className: "lightbox" },
+        { className: show ? "lightbox" : "lightbox lightbox-close" },
         _react2.default.createElement(
           "div",
-          { className: "content" },
+          {
+            className: show ? "lightbox-content lightbox-visible" : "lightbox-content lightbox-hidden"
+          },
+          _react2.default.createElement("button", { className: "lightbox-close-btn", onClick: close }),
           _react2.default.createElement(
             "div",
             { className: "lightbox-header" },
-            title,
             _react2.default.createElement(
-              "button",
-              { className: "lightbox-close-btn", onClick: close },
-              "\u95DC\u9589"
+              "div",
+              { className: "lightbox-title" },
+              title
             )
           ),
-          _react2.default.createElement("hr", null),
           _react2.default.createElement(
             "div",
             { className: "lightbox-body" },
             this.props.children
           )
         )
-      ) || null;
+      );
     }
   }]);
 
