@@ -5,7 +5,13 @@ export default class ScrollableLightbox extends Component {
     const { show, close, title } = this.props;
     return (
       <div className={show ? "lightbox" : "lightbox lightbox-close"}>
-        <div className={show ? "content down" : "content up"}>
+        <div
+          className={
+            show
+              ? "lightbox-content lightbox-visible"
+              : "lightbox-content lightbox-hidden"
+          }
+        >
           <button className="lightbox-close-btn" onClick={close}></button>
           <div className="lightbox-header">
             <div className="lightbox-title">{title}</div>

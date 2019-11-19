@@ -17,7 +17,7 @@ body {
   opacity: 0;
   visibility: hidden; /*讓下一層的畫面可以被點擊*/
 }
-.content {
+.lightbox-content {
   position: relative;
   margin: 15vh auto;
   max-width: 980px;
@@ -25,11 +25,11 @@ body {
   min-height: 200vh;
   background: white;
 }
-.down {
+.lightbox-visible {
   animation: down 600ms;
   animation-timing-function: ease-out;
 }
-.up {
+.lightbox-hidden {
   animation: up 600ms;
   animation-timing-function: ease-out;
 }
@@ -79,4 +79,62 @@ body {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e9e8e7;
+}
+/*-----RWD-----*/
+/*平板*/
+@media screen and (max-width: 991px) {
+  .lightbox-content {
+    max-width: 600px;
+  }
+}
+/*手機*/
+@media screen and (max-width: 767px) {
+  .lightbox-content {
+    margin: 0px auto; /*內容的上下不需要顯示黑影*/
+    padding: 20px; /*到螢幕邊界的padding 縮小。 */
+  }
+  .lightbox-header .lightbox-title {
+    font-size: 19px; /*字體縮小*/
+    font-weight: bold; /*粗體*/
+  }
+  .lightbox-close-btn {
+    /* 圖片換成左箭頭，位置換到左邊*/
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: calc(1em / 2 + 20px); /*下移20(padding-top)+10(文字中間)*/
+    left: 20px; /*左移15對齊文字內容。*/
+    right: initial; /*原先web版的right 特性不需要了。*/
+    background: url("../img/arrow-left.svg") no-repeat center;
+    background-size: contain;
+    opacity: 1;
+    cursor: pointer;
+    display: block;
+  }
+  .lightbox-visible {
+    animation: right-in 600ms;
+    animation-timing-function: ease-out;
+  }
+  .lightbox-hidden {
+    animation: right-out 600ms;
+    animation-timing-function: ease-out;
+  }
+  @keyframes right-in {
+    /*手機板改成右進*/
+    from {
+      right: -400px;
+    }
+    to {
+      right: 0px;
+    }
+  }
+  @keyframes right-out {
+    /*手機板改成右出*/
+    from {
+      right: 0px;
+    }
+    to {
+      right: -400px;
+    }
+  }
 }
